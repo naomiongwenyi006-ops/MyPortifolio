@@ -9,36 +9,61 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: "Segoe UI", Arial, sans-serif;
-      background: #0f172a;
+      background: #242424;
       color: #e2e8f0;
       line-height: 1.6;
     }
     nav {
       position: sticky; top: 0;
-      background: #111c33;
+      background: #1b1b1b;
       display: flex; justify-content: space-between; align-items: center;
       padding: 16px 8%;
       z-index: 10;
     }
-    nav h2 { color: #38bdf8; }
+    nav h2 { color: #a7f3d0; }
     nav a { color: #e2e8f0; text-decoration: none; margin-left: 24px; }
-    nav a:hover { color: #38bdf8; }
+    nav a:hover { color: #a7f3d0; }
     section { padding: 80px 8%; }
     .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
     .hero h1 { font-size: 3rem; }
-    .hero span { color: #38bdf8; }
+    .hero span { color: #a7f3d0; }
     .hero p { margin: 16px 0 28px; max-width: 560px; color: #94a3b8; }
     .btn {
-      display: inline-block; background: #38bdf8; color: #0f172a;
+      display: inline-block; background: #a7f3d0; color: #242424;
       padding: 12px 28px; border-radius: 6px; text-decoration: none;
       font-weight: 600; border: none; cursor: pointer; font-size: 1rem;
     }
-    .btn:hover { background: #0ea5e9; }
-    h2.title { font-size: 2rem; margin-bottom: 32px; color: #38bdf8; }
-    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn:hover { background: #6ee7b7; }
+    h2.title { font-size: 2rem; margin-bottom: 32px; color: #a7f3d0; }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
     .skill {
-      background: #1e293b; padding: 10px 20px; border-radius: 20px;
-      border: 1px solid #334155;
+      background: #303030; padding: 24px; border-radius: 10px;
+      border: 1px solid #454545;
+    }
+    .skill h3 { margin-bottom: 8px; color: #e2e8f0; }
+    .skill p { color: #94a3b8; font-size: 0.95rem; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .stat {
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 12px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      color: #a7f3d0;
+      margin-bottom: 8px;
     }
     .grid {
       display: grid;
@@ -46,72 +71,155 @@
       gap: 24px;
     }
     .card {
-      background: #1e293b; padding: 24px; border-radius: 10px;
-      border: 1px solid #334155; transition: transform 0.2s;
+      background: #303030; padding: 24px; border-radius: 10px;
+      border: 1px solid #454545; transition: transform 0.2s;
     }
     .card:hover { transform: translateY(-6px); }
     .card h3 { margin-bottom: 8px; }
     .card p { color: #94a3b8; font-size: 0.95rem; }
     form { max-width: 520px; display: flex; flex-direction: column; gap: 14px; }
     input, textarea {
-      padding: 12px; border-radius: 6px; border: 1px solid #334155;
-      background: #1e293b; color: #e2e8f0; font-size: 1rem;
+      padding: 12px; border-radius: 6px; border: 1px solid #454545;
+      background: #303030; color: #e2e8f0; font-size: 1rem;
     }
-    #status { margin-top: 12px; color: #4ade80; }
-    footer { text-align: center; padding: 24px; color: #64748b; background: #111c33; }
+    input:focus, textarea:focus { outline: 2px solid #a7f3d0; outline-offset: 2px; }
+    #status { margin-top: 12px; color: #94a3b8; }
+    .contact-link { color: #a7f3d0; text-decoration: none; }
+    .contact-link:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 24px; color: #9ca3af; background: #1b1b1b; }
   </style>
 </head>
 <body>
 
   <nav>
-    <h2>YourName</h2>
+    <h2>Naomieee</h2>
     <div>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <section class="hero">
-    <h1>Hi, I'm <span>Your Name</span></h1>
-    <p>I'm a software developer who builds web applications and desktop programs using Java, C++, and modern web technologies.</p>
+    <h1>Hi, I'm <span>Naomieee</span></h1>
+    <p>I'm a freelance software developer who helps clients bring ideas to life with responsive websites, web applications, and desktop software.</p>
     <div><a href="#projects" class="btn">View My Work</a></div>
   </section>
 
   <section id="about">
     <h2 class="title">About Me</h2>
     <p style="max-width:700px; color:#94a3b8;">
-      Write a short paragraph about yourself here: where you study or work,
-      what you enjoy building, and what you are currently learning.
+      I'm a freelance software developer who enjoys turning ideas into straightforward, useful digital experiences.
+      I work with Java, C++, HTML, CSS, and JavaScript to build responsive websites, interactive web projects,
+      and desktop applications. I value clear communication, thoughtful problem-solving, and working closely
+      with clients to shape a solution that fits their goals. I'm always learning and looking for new ways to
+      make technology more useful and easier to use.
     </p>
   </section>
 
   <section id="skills">
     <h2 class="title">Skills</h2>
+    <p style="max-width:700px; color:#94a3b8; margin-bottom:24px;">
+      I use these skills to create websites that look professional, work smoothly, and help your customers find what they need.
+    </p>
     <div class="skills">
-      <div class="skill">Java</div>
-      <div class="skill">C++</div>
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
+      <article class="skill">
+        <h3>HTML — Clear Structure</h3>
+        <p>I organize each page into clear sections such as services, about information, projects, and contact details, so visitors can quickly understand your business.</p>
+      </article>
+      <article class="skill">
+        <h3>CSS — Polished Design</h3>
+        <p>I style pages with consistent colors, readable typography, and thoughtful layouts to give your brand a professional and welcoming look.</p>
+      </article>
+      <article class="skill">
+        <h3>Responsive Websites</h3>
+        <p>I build layouts that adapt to mobile phones, tablets, and desktop screens, making it easier for customers to browse and contact you on any device.</p>
+      </article>
+      <article class="skill">
+        <h3>JavaScript — Interactive Features</h3>
+        <p>I can add useful interactions such as mobile navigation, form behavior, and dynamic content to make a website more engaging and convenient.</p>
+      </article>
+      <article class="skill">
+        <h3>Java & C++ — Programming</h3>
+        <p>I also use Java and C++ to practice problem-solving and build software projects, including desktop applications and programming solutions.</p>
+      </article>
+      <article class="skill">
+        <h3>Client-Focused Problem Solving</h3>
+        <p>I listen to your goals, plan the pages and features, and keep you involved as the website takes shape, so the result fits your needs.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="title">Freelance Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Website Development</h3>
+        <p>Build clean, modern websites for personal brands, portfolios, and small businesses.</p>
+      </div>
+      <div class="card">
+        <h3>Responsive Design</h3>
+        <p>Make websites easy to use and attractive on phones, tablets, and desktop screens.</p>
+      </div>
+      <div class="card">
+        <h3>Web Applications</h3>
+        <p>Create interactive web experiences and useful browser-based tools with JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>Desktop Applications</h3>
+        <p>Develop practical desktop software and programming solutions using Java and C++.</p>
+      </div>
+      <div class="card">
+        <h3>Website Updates & Fixes</h3>
+        <p>Improve existing pages, fix layout or functionality issues, and add requested features.</p>
+      </div>
+      <div class="card">
+        <h3>Project Planning</h3>
+        <p>Discuss your goals, plan the right features, and refine the result with your feedback.</p>
+      </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2 class="title">Projects</h2>
+    <h2 class="title">Website Types I Can Create</h2>
     <div class="grid">
       <div class="card">
-        <h3>Project One</h3>
-        <p>Short description of your first project and the tools you used.</p>
+        <h3>Small Business Website</h3>
+        <p>A professional site to introduce a business, explain its services, share opening hours and contact details, and help potential customers get in touch.</p>
       </div>
       <div class="card">
-        <h3>Project Two</h3>
-        <p>Short description of your second project and what it does.</p>
+        <h3>Online Store</h3>
+        <p>A product-focused website where customers can browse items, view prices and details, and contact the business or proceed to an online checkout.</p>
       </div>
       <div class="card">
-        <h3>Project Three</h3>
-        <p>Short description of your third project and what you learned.</p>
+        <h3>Personal Portfolio</h3>
+        <p>A tailored portfolio for a freelancer or creative professional to showcase their skills, services, past work, and a clear way to request a project.</p>
+      </div>
+      <div class="card">
+        <h3>Restaurant or Cafe Website</h3>
+        <p>Present a menu, opening hours, location, and contact information so guests can explore what you offer before they visit.</p>
+      </div>
+      <div class="card">
+        <h3>Landing Page</h3>
+        <p>A focused page for a product, service, or campaign that explains its benefits and guides visitors toward one clear next step.</p>
+      </div>
+      <div class="card">
+        <h3>Blog or News Website</h3>
+        <p>Organize articles into readable pages and categories, making it easier for readers to discover and follow your content.</p>
+      </div>
+      <div class="card">
+        <h3>Event Website</h3>
+        <p>Share event details, schedules, venue information, and registration or contact instructions in one convenient place.</p>
+      </div>
+      <div class="card">
+        <h3>Booking or Appointment Website</h3>
+        <p>Explain your services and help visitors request an appointment, with clear contact options and information about availability.</p>
+      </div>
+      <div class="card">
+        <h3>Community or Nonprofit Website</h3>
+        <p>Introduce your organization, communicate its mission, share updates, and help people find ways to get involved or reach out.</p>
       </div>
     </div>
   </section>
@@ -121,40 +229,25 @@
     <form id="contactForm">
       <input type="text" id="name" placeholder="Your name" required />
       <input type="email" id="email" placeholder="Your email" required />
+      <input type="tel" id="phone" placeholder="Your phone number (include country code)" autocomplete="tel" required />
       <textarea id="message" rows="5" placeholder="Your message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
+      <button type="submit" class="btn">Send via WhatsApp</button>
     </form>
-    <p id="status"></p>
+    <p id="status" aria-live="polite">Your name, email, and phone number will be included in the WhatsApp message. I’ll receive them after you send the message in WhatsApp.</p>
   </section>
 
-  <footer>&copy; 2026 Your Name. All rights reserved.</footer>
+  <footer>&copy; 2026 Naomieee. All rights reserved.</footer>
 
   <script>
-    document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    const whatsappNumber = "254794043702";
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
       e.preventDefault();
-      const data = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value
-      };
-      const status = document.getElementById("status");
-      try {
-        const res = await fetch("/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
-        if (res.ok) {
-          status.style.color = "#4ade80";
-          status.textContent = "Message sent. Thank you!";
-          e.target.reset();
-        } else {
-          throw new Error();
-        }
-      } catch (err) {
-        status.style.color = "#f87171";
-        status.textContent = "Something went wrong. Please try again.";
-      }
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const text = `Hello, I'm ${name}.\nEmail: ${email}\nPhone: ${phone}\n\n${message}`;
+      window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
     });
   </script>
 </body>
